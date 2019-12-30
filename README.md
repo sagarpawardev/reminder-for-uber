@@ -2,13 +2,13 @@
 
 This application calculates the estimated time to book a cab for reaching a particular destination.
 
-Tech-stack:
+## Tech-stack:
 - JSP
 - Spring
 - Java
 - Retrofit2
 
-Pre Requisites:
+## Pre Requisites:
 - Java 8 or higher
 - Maven
 - Heroku CLI
@@ -39,5 +39,5 @@ Pre Requisites:
         else:
             send_mail()
     
-# Live Demo
+## Live Demo
 You can check live demo [here](https://time-to-book-uber.herokuapp.com/)
