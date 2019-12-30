@@ -1,0 +1,48 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:component-scan base-package = "com.customuber" />
+
+    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name = "prefix" value = "/WEB-INF/jsp/" />
+        <property name = "suffix" value = ".jsp" />
+    </bean>
+
+    <alias name="defaultReminderFacade" alias="reminderFacade" />
+    <bean id="defaultReminderFacade" class="com.customuber.facade.impl.ReminderFacadeImpl">
+        <property name="estimateService" ref="estimateService" />
+        <property name="reminderService" ref="reminderService" />
+        <property name="contentService" ref="contentService" />
+    </bean>
+
+    <alias name="defaultEstimateService" alias="estimateService" />
+    <bean id="defaultEstimateService" class="com.customuber.service.impl.EstimateServiceImpl" >
+        <property name="configurationService" ref="configurationService" />
+        <property name="apiLoggingService" ref="apiLoggingService" />
+    </bean>
+
+    <alias name="defaultReminderService" alias="reminderService" />
+    <bean id="defaultReminderService" class="com.customuber.service.impl.ReminderServiceImpl" >
+        <property name="configurationService" ref="configurationService"/>
+        <property name="apiLoggingService" ref="apiLoggingService" />
+    </bean>
+
+    <alias name="defaultContentService" alias="contentService" />
+    <bean id="defaultContentService" class="com.customuber.service.impl.ContentServiceImpl" >
+        <property name="configurationService" ref="configurationService" />
+    </bean>
+
+    <alias name="defaultConfigurationService" alias="configurationService" />
+    <bean id="defaultConfigurationService" class="com.customuber.service.impl.ConfigurationServiceImpl" />
+
+    <alias name="defaultApiLoggingService" alias="apiLoggingService" />
+    <bean id="defaultApiLoggingService" class="com.customuber.service.impl.ApiLoggingServiceImpl" >
+        <property name="configurationService" ref="configurationService" />
+    </bean>
+
+</beans>
