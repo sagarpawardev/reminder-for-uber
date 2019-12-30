@@ -13,12 +13,12 @@ Pre Requisites:
 - Maven
 - Heroku CLI
 
-Steps to install on Heroku:
+## Steps to deploy on Heroku:
 1. Create war file using command `mvn package`
 2. Open terminal and type `heroku login`
 3. Once logged in, use command `heroku war:deploy timetobookuber.war --app <heroku_app_name>` to deploy
 
-Basic Alogrithm:
+## Basic Alogrithm:
 
     trip_start_time = findStartTime()
     if( trip_start_time < current_time)
