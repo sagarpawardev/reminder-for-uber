@@ -28,26 +28,6 @@ public class ReminderFacadeImpl implements ReminderFacade {
     private ReminderService reminderService;
     private ContentService contentService;
 
-    /**
-        trip_start_time = findStartTime()
-        if( trip_start_time < current_time)
-            throw Exception
-
-         check(trip_start_time)
-
-        function check( trip_start_time, decayed_cab_arrival_time ):
-            cab_arrival_time = findCabArrivalTime()
-            cab_arrival_time = time_decay_algo(cab)
-            book_time = start_time - cab_arrival_time
-
-            time_left = book_time - current_time
-            if time_left > 60:
-                schedule( check(trip_start_time) , book_time-60)
-            else if time_left > 1:
-                schedule( check(trip_start_time), book_time - time_left/2)
-            else:
-                send_mail()
-     */
     @Override
     public void scheduleReminder(GeoLocation source, GeoLocation destination, LocalDateTime arrivalDateTime, String user) throws ReminderFacadeException {
         try {
