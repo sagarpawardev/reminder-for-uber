@@ -9,9 +9,13 @@ Tech-stack:
 - Retrofit2
 
 Pre Requisites:
-- Java 8 or higher
+- Java 1.8
 - Maven
 - Heroku CLI
+
+## Steps to deploy on local Tomcat:
+1. Go to project root directory and Clean Project using command `mvn clean`
+2. Run tomcat server using command `mvn tomcat7:run`
 
 ## Steps to deploy on Heroku:
 1. Create war file using command `mvn package`
