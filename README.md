@@ -1,4 +1,4 @@
-# time-to-book-uber
+# reminder-for-uber
 
 This application calculates the estimated time to book a cab for reaching a particular destination.
 
